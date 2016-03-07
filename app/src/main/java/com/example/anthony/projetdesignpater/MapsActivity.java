@@ -56,6 +56,12 @@ public class MapsActivity extends FragmentActivity implements
         });
 
         FloatingActionButton button_gallery = (FloatingActionButton) findViewById(R.id.button_gallery);
+        button_gallery.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v){
+                startActivity(new Intent(getApplicationContext(), ListViewActivity.class));
+            }
+        });
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
