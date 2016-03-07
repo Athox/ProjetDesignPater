@@ -3,4 +3,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_camera">CameraActivity</string>
     <string name="album_name">CameraSample</string>
+    <string name="popup_nom">Nom</string>
+    <string name="popup_commentaire">Commentaire</string>
 </resources>
