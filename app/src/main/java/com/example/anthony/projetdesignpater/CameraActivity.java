@@ -61,7 +61,7 @@ public class CameraActivity extends Activity {
 
             storageDir = new File (
                     Environment.getExternalStorageDirectory()
-                            + "/dcim/"
+                            + "/"
                             + getAlbumName()
             );
 
@@ -153,6 +153,12 @@ public class CameraActivity extends Activity {
     }
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         // on récupère le statut de retour de l'activité 2 c'est à dire l'activité numéro 1000
+        Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
+        File f = new File(mCurrentPhotoPath);
+        Uri contentUri = Uri.fromFile(f);
+        mediaScanIntent.setData(contentUri);
+        this.sendBroadcast(mediaScanIntent);
+        mCurrentPhotoPath = null;
         showSimplePopUp();
     }
 
