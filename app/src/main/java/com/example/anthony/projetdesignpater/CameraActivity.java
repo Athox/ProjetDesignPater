@@ -32,7 +32,13 @@ public class CameraActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        Bundle extras = getIntent().getExtras();
+        if (extras != null)
+        {
+            Double lat = extras.getDouble("lat");
+            Double lon = extras.getDouble("lon");
+            System.out.println(lat);
+        }
 
         //setContentView(R.layout.activity_camera);
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

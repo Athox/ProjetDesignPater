@@ -23,10 +23,6 @@ public class ListViewActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview_layout);
 
-
-
-
-
     }
 
     @Override
@@ -79,7 +75,7 @@ public class ListViewActivity extends ActionBarActivity {
         PhotoDataBase db= new PhotoDataBase(this);
         db.open();
         LinkedList<PhotoCapture> photos= db.selectAll();
-        String lien = photos.get(0).getLien();
+        //String lien = photos.get(0).getLien();
         db.displayArticles();
         db.close();
         return photos;

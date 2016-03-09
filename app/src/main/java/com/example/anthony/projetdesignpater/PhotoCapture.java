@@ -1,7 +1,5 @@
 package com.example.anthony.projetdesignpater;
 
-import android.os.Environment;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,8 +18,8 @@ public class PhotoCapture {
     public PhotoCapture(String nom, String lien, String commentaire, Double latitude, Double longitude) {
         this.nom = nom;
         this.commentaire = commentaire;
-        this.lien= Environment.getExternalStorageDirectory()
-                /*+ "/dcim/DesignPaterRepository"*/+lien;
+        this.lien= //Environment.getExternalStorageDirectory()
+                /*+ "/dcim/DesignPaterRepository"+*/lien.substring(19);
         this.Date=new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         this.localisation_latitude=String.valueOf(latitude);
         this.localisation_longitude=String.valueOf(longitude);

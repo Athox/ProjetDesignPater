@@ -38,7 +38,7 @@ public class CustomList extends ArrayAdapter<String> {
             //System.out.println(photos.get(position).getLien());
             //System.exit(0);
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-            bmOptions.inSampleSize = 10;
+            //bmOptions.inSampleSize = 10;
             String imageInSD = photos.get(position).getLien();
             //bmOptions.inJustDecodeBounds = true;
             Bitmap bitmap = BitmapFactory.decodeFile(imageInSD);
