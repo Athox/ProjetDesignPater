@@ -26,6 +26,8 @@ public class CameraActivity extends Activity {
     private static final int ACTION_TAKE_PHOTO_B = 1;
     private String nom_photo=null;
     private String commentaire_photo=null;
+    private Double lat;
+    private Double lon;
     private File file;
 
     @Override
@@ -35,9 +37,8 @@ public class CameraActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         if (extras != null)
         {
-            Double lat = extras.getDouble("lat");
-            Double lon = extras.getDouble("lon");
-            System.out.println(lat);
+            lat = extras.getDouble("lat");
+            lon = extras.getDouble("lon");
         }
 
         //setContentView(R.layout.activity_camera);
@@ -134,7 +135,7 @@ public class CameraActivity extends Activity {
                         }
 */
 
-                        PhotoCapture photo=new PhotoCapture(nom_photo, file.getAbsolutePath() ,commentaire_photo,0.0,0.0);
+                        PhotoCapture photo=new PhotoCapture(nom_photo, file.getAbsolutePath() ,commentaire_photo,lat,lon);
                         saveInBase(photo);
                         finish();
                     }

@@ -19,10 +19,10 @@ public class PhotoCapture {
         this.nom = nom;
         this.commentaire = commentaire;
         this.lien= //Environment.getExternalStorageDirectory()
-                /*+ "/dcim/DesignPaterRepository"+*/lien.substring(19);
+                /*+ "/dcim/DesignPaterRepository"+*/lien/*.substring(19)*/;
         this.Date=new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        this.localisation_latitude=String.valueOf(latitude);
-        this.localisation_longitude=String.valueOf(longitude);
+        this.localisation_latitude=latitude.toString();
+        this.localisation_longitude=longitude.toString();
 
 
             /*

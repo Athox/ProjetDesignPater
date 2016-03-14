@@ -32,9 +32,11 @@ public class CustomList extends ArrayAdapter<String> {
             LayoutInflater inflater = context.getLayoutInflater();
             View rowView= inflater.inflate(R.layout.list_single, null, true);
             TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
+            TextView txtGps = (TextView)rowView.findViewById(R.id.gps);
 
             ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
             txtTitle.setText(photos.get(position).getNom());
+            txtGps.setText((photos.get(position).getLocalisation_latitude()));
             //System.out.println(photos.get(position).getLien());
             //System.exit(0);
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();
